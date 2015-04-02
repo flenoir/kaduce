@@ -1,4 +1,7 @@
-<p>formulaire de saisie</p>
+<div class="row formulaire">
+<div class="small-2 large-2 columns"></div>
+<div class="small-8 large-8 columns">
+<p>Formulaire de saisie</p>
 
 <%= form_for(@product) do |f| %>
 <%= f.label :name %>
@@ -13,3 +16,6 @@
 <%= f.text_field :image %>
 <%= f.submit 'Valider', :class => 'button info' %>
 <% end %>
+</div>
+<div class="small-2 large-2 columns"></div>
+</div>

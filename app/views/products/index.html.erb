@@ -1,11 +1,13 @@
 <%= render 'header' %>
 
+<div class="container">
+
 <h1>Index des produits</h1>
 
 <table>
 <% @products.each do |product| %>
 <tr>
-	<td><%= product.name %></td>
+	<td><%= product.name.capitalize %></td>
 	<td><%= product.description %></td>
 	<td><%= product.price %></td>
 	<td><%= product.reduction %></td>
@@ -17,3 +19,5 @@
 <% end %>
 
 </table>
+
+</div>
