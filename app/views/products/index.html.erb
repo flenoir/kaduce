@@ -1,5 +1,8 @@
-<h1>Index</h1>
+<%= render 'header' %>
 
+<h1>Index des produits</h1>
+
+<table>
 <% @products.each do |product| %>
 <tr>
 	<td><%= product.name %></td>
@@ -7,5 +10,10 @@
 	<td><%= product.price %></td>
 	<td><%= product.reduction %></td>
 	<td><%= product.image %></td>
+	<td><%= link_to "Voir", product_path(product) %></td>
+	<td><%= link_to "Editer", edit_product_path(product) %></td>
+	<td><%= link_to "Effacer", product, method: :delete, data: { confirm: 'Etes vous sûr de vouloir effacer ce produit ?' } %></td>
 </tr>
-	<% end %>
+<% end %>
+
+</table>

@@ -1,6 +1,6 @@
 Kaduce::Application.routes.draw do
 
-  get 'products/index'
+  root 'products#index'
   # get 'products/show'
 
   resources :products
