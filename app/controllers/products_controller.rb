@@ -42,7 +42,10 @@ class ProductsController < ApplicationController
 		redirect_to(:action => 'index')
 	end
 
-	
+	def slideshow
+	@product = Product.all
+	end
+
 
 private
 

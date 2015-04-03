@@ -2,6 +2,7 @@ Kaduce::Application.routes.draw do
 
   root 'products#index'
   # get 'products/show'
+  get 'products/slideshow'
 
   resources :products
   # The priority is based upon order of creation: first created -> highest priority.
