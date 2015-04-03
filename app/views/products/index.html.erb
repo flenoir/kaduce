@@ -2,22 +2,36 @@
 
 <div class="container">
 
-<h1>Index des produits</h1>
+<h3>Index des produits</h3>
 
 <table>
-<% @products.each do |product| %>
-<tr>
-	<td><%= product.name.capitalize %></td>
-	<td><%= product.description %></td>
-	<td><%= product.price %></td>
-	<td><%= product.reduction %></td>
-	<td><%= product.image %></td>
-	<td><%= link_to "Voir", product_path(product) %></td>
-	<td><%= link_to "Editer", edit_product_path(product) %></td>
-	<td><%= link_to "Effacer", product, method: :delete, data: { confirm: 'Etes vous sûr de vouloir effacer ce produit ?' } %></td>
-</tr>
-<% end %>
-
+<thead>
+	<tr>
+		<th>Nom du produit</th>
+		<th>Description</th>
+		<th>Prix initial</th>
+		<th>Pourcentage de réduction</th>
+		<th>adresse de l'image</th>
+		<th>Prix Promotion</th>
+		<th>actions</th>
+	</tr>
+</thead>
+<tbody>
+	<% @products.each do |product| %>
+	<tr>
+		<td><%= product.name.capitalize %></td>
+		<td><%= product.description %></td>
+		<td style="text-align:right"><%= product.price %> euros</td>
+		<td  style="text-align:right"><%= product.reduction %>%</td>
+		<td><%= product.image %></td>
+		<% pourcentage = product.reduction.to_f / 100 %>
+		<td  style="text-align:right"><%= product.price - (product.price * pourcentage) %> euros</td>
+		<td style="text-align:center"><%= link_to "Voir", product_path(product) %></td>
+		<td style="text-align:center"><%= link_to "Editer", edit_product_path(product) %></td>
+		<td style="text-align:center"><%= link_to "Effacer", product, method: :delete, data: { confirm: 'Etes vous sûr de vouloir effacer ce produit ?' } %></td>
+	</tr>
+	<% end %>
+</tbody>
 </table>
 
 </div>

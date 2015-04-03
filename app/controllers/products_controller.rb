@@ -42,6 +42,8 @@ class ProductsController < ApplicationController
 		redirect_to(:action => 'index')
 	end
 
+	
+
 private
 
 def product_params
