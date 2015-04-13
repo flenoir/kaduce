@@ -1,6 +1,13 @@
 class ProductsController < ApplicationController
+	# winplateforme
+
 	def index
 	@products = Product.all
+	# if @products(params[:selection]) == true
+	#	redirect_to(:action => 'index')
+	# else
+	#	render('new')
+	# end
 	end
 
 	def show

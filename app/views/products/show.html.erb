@@ -1,11 +1,23 @@
 <%= render 'header' %>
 
-<h1>Fiche Produit</h1>
+<div class="row">
+	<div class = "small-1 large-1 column"></div>
+		<div class="small-10 large-10 column">
+		
+			<div class="row container">
+				<div class="small-6 large-6 column">
+				<h2><%= @product.name.capitalize %><br><br></h2>
+				<%= @product.description %><br><br>
+				<% pourcentage = @product.reduction.to_f / 100 %>
+				<h4><%= @product.price - (@product.price * pourcentage) %>  euros</h4><br><br>
+				Soit <%= @product.reduction %>% de réduction<br>
+				Prix inital :<%= @product.price %> euros
+				</div>
+				<div class="small-6 large-6 column">
+				<img src="<%= @product.image %>">
+				</div>
+			</div>
+		</div>
 
-<%= @product.name %>
-<%= @product.description %>
-<%= @product.price %>
-<%= @product.reduction %>
-<%= @product.selection %>
-<img src="<%= @product.image %>">
-
+	<div class = "small-1 large-1 column"> </div>
+</div>

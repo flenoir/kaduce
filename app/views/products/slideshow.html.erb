@@ -1,8 +1,26 @@
-<meta http-equiv="refresh" content="10;url=http://www.yidaki.fr/WW/Meteo_J1_TempsWC_matin.php" />
+<meta http-equiv="refresh" content="10;url=http://localhost:3000/products/2" />
+<!-- http://www.yidaki.fr/WW/Meteo_J1_TempsWC_matin.php -->
 
+<h1>Slideshow1</h1>
 
-<h1>Slideshow</h1>
+<div class="row">
+	<div class = "small-1 large-1 column"></div>
+		<div class="small-10 large-10 column">
+		
+			<div class="row container">
+				<div class="small-6 large-6 column">
+				<h2><%= @product[1].name.capitalize %><br><br></h2>
+				<%= @product[1].description %><br><br>
+				<% pourcentage = @product[1].reduction.to_f / 100 %>
+				<h4><%= @product[1].price - (@product[1].price * pourcentage) %>  euros</h4><br><br>
+				Soit <%= @product[1].reduction %>% de réduction<br>
+				Prix inital :<%= @product[1].price %> euros
+				</div>
+				<div class="small-6 large-6 column">
+				<img src="<%= @product[1].image %>">
+				</div>
+			</div>
+		</div>
 
-<%= @product.each do |p| %>
-<%= p.name %>
-<% end %>
+	<div class = "small-1 large-1 column"> </div>
+</div>
