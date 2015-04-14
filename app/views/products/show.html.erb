@@ -1,8 +1,13 @@
 <%= render 'header' %>
 
-<h1>Show</h1>
+<h1>Fiche Produit</h1>
 
 <%= @product.name %>
+<%= @product.description %>
+<%= @product.price %>
+<%= @product.reduction %>
+<%= @product.selection %>
+<img src="<%= @product.image %>">
 
 <div class="row">
 	<div class = "small-1 large-1 column"></div>
